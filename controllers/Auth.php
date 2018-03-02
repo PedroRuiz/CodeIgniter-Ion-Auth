@@ -842,6 +842,9 @@ class Auth extends CI_Controller
 	 */
 	public function _valid_csrf_nonce()
 	{
+		// this function is deprecated if (and only if) you use csrf_protection as TRUE
+		return TRUE;
+		/*
 		$csrfkey = $this->input->post($this->session->flashdata('csrfkey'));
 		if ($csrfkey && $csrfkey === $this->session->flashdata('csrfvalue'))
 		{
@@ -851,6 +854,7 @@ class Auth extends CI_Controller
 		{
 			return FALSE;
 		}
+		*/
 	}
 
 	/**
